@@ -4,42 +4,6 @@ const db = require('../config/db');
 const { handleError, getFormattedDate } = require('../utils/errorHandler');
 
 /**
- * ຊຸດຄຳສັ່ງ SQL ສຳລັບສ້າງຕາຕະລາງ suppliers ຖ້າຍັງບໍ່ມີ
- */
-// const createTableIfNotExists = () => {
-//     const sql = `
-//     CREATE TABLE IF NOT EXISTS suppliers (
-//       supId INT AUTO_INCREMENT PRIMARY KEY,
-//       supName VARCHAR(100) NOT NULL,
-//       supEmail VARCHAR(100),
-//       supTel VARCHAR(20),
-//       supProvince VARCHAR(50),
-//       supDistrict VARCHAR(50),
-//       supVillage VARCHAR(50),
-//       supContact VARCHAR(100),
-//       created_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-//       updated_date DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-//     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-//   `;
-
-//     return new Promise((resolve, reject) => {
-//         db.query(sql, (err, result) => {
-//             if (err) {
-//                 console.error('ເກີດຂໍ້ຜິດພາດໃນການສ້າງຕາຕະລາງ suppliers:', err);
-//                 return reject(err);
-//             }
-//             console.log('ຕາຕະລາງ suppliers ພ້ອມໃຊ້ງານແລ້ວ');
-//             resolve(result);
-//         });
-//     });
-// };
-
-// ຮຽກໃຊ້ຟັງຊັນສ້າງຕາຕະລາງຕອນເລີ່ມຕົ້ນ
-// createTableIfNotExists().catch(err => {
-//     console.error('ບໍ່ສາມາດສ້າງຕາຕະລາງ suppliers ໄດ້:', err);
-// });
-
-/**
  * ຟັງຊັນຈັດຮູບແບບຂໍ້ມູນຜູ້ສະໜອງສຳລັບສົ່ງກັບໄປ frontend
  */
 const formatSupplierData = (sup) => {
